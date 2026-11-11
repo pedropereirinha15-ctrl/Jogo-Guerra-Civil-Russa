@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Rússia durante a Guerra Civil (1918-1921)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .page { display: none; }
+        .page.active { display: block; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen flex flex-col justify-between">
+
+    <!-- CABEÇALHO COM NAVEGAÇÃO -->
+    <header class="bg-slate-800 border-b border-slate-700 p-4 shadow-md sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto flex justify-between items-center">
+            <h1 class="text-lg font-bold text-red-400 flex items-center gap-2">
+                <span>☭</span> A Rússia Soviética (1918-1921)
+            </h1>
+            <div id="user-info-display" class="text-sm text-slate-400 hidden">
+                Grupo: <span id="display-name" class="font-semibold text-slate-200"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="max-w-4xl w-full mx-auto p-4 md:p-6 my-auto flex-grow">
+
+        <!-- PÁGINA 1: ENTRADA E IDENTIFICAÇÃO -->
+        <div id="page-1" class="page active bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <div class="text-center mb-6">
+                <span class="bg-red-900 text-red-200 text-xs px-3 py-1 rounded-full uppercase font-bold tracking-wider">Simulação Histórica • 45 Minutos</span>
+                <h2 class="text-3xl font-extrabold text-white mt-3">A Rússia durante a Guerra Civil</h2>
+                <p class="text-slate-400 mt-2">Comunismo de Guerra, Repressão, a Crise de 1921 e o Dilema da NEP.</p>
+            </div>
+
+            <div class="bg-slate-900/60 p-6 rounded-lg border border-slate-700 mb-6 text-sm leading-relaxed text-slate-300">
+                <p>Nesta simulação vão analisar o impacto económico e político das medidas adotadas pelo poder soviético liderado por Lenine entre 1918 e 1921. Examinem as fontes documentais, respondam às questões de orientação e tomem notas analíticas antes de tomarem a decisão estratégica no Conselho de Lenine.</p>
+            </div>
+
+            <form id="form-login" onsubmit="startSimulation(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Membros do Grupo *</label>
+                    <input type="text" id="input-name" required class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-red-500" placeholder="Ex: Ana Silva, João Santos e Pedro Alves">
+                </div>
+                <button type="submit" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 rounded-lg transition shadow-lg mt-4 cursor-pointer">
+                    Iniciar Simulação Histórica →
+                </button>
+            </form>
+        </div>
+
+        <!-- PÁGINA 2: COMUNISMO DE GUERRA (ECONOMIA) -->
+        <div id="page-2" class="page bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <div class="flex justify-between items-center mb-4 border-b border-slate-700 pb-3">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Bloco 1 / 4 • Economia</span>
+                <button onclick="changePage(1)" class="text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded text-slate-300 cursor-pointer">← Voltar ao Início</button>
+            </div>
+            
+            <h2 class="text-2xl font-bold text-white mb-3">Medidas Económicas: O Comunismo de Guerra</h2>
+            
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                Entre 1918 e 1921, perante a escassez alimentar e o avanço dos exércitos brancos, o regime bolshevique decretou a nacionalização total das indústrias e o confisco compulsório de géneros agrícolas.
+            </p>
+
+            <div class="space-y-6 mb-6">
+                <!-- Fonte A -->
+                <div class="bg-slate-900 p-6 rounded-lg border border-slate-700">
+                    <span class="text-xs text-red-400 font-semibold uppercase tracking-wider">FONTE A — A Requisição Forçada de Cereais (Prodrazverstka)</span>
+                    <blockquote class="text-sm italic text-slate-300 mt-3 border-l-4 border-red-500 pl-4 space-y-2">
+                        <p>«1. Com o objetivo de abastecer de forma urgente a população urbana e o Exército Vermelho com cereais, estabelece-se a obrigatoriedade de entrega de todos os excedentes de grãos e reservas alimentares dos camponeses aos órgãos do Estado soviético.</p>
+                        <p>2. A determinação das necessidades de consumo das famílias camponesas será fixada pelos comissariados locais. Toda a quantidade de trigo, centeio ou cevada que exceda essa norma fixa é considerada propriedade do Estado.</p>
+                        <p>3. A ocultação de excedentes, a venda secreta no mercado livre ou a recusa de entrega serão punidas com as sanções mais severas, incluindo o confisco total dos bens pessoais e a prisão imediata pelos tribunais revolucionários.»</p>
+                    </blockquote>
+                    <p class="text-xs text-slate-400 mt-3 border-t border-slate-800 pt-2">
+                        <strong>Referência Académica:</strong> <em>Decreto do Comissariado do Povo para a Alimentação (Narkomprod)</em>, 11 de Janeiro de 1919. Publicado em <em>Decrees of the Soviet Power</em>, Vol. IV, pp. 292–294; ver também V. I. Lenin, <em>Collected Works</em>, Vol. 32, pp. 185–189.
+                    </p>
+                </div>
+
+                <!-- Fonte B -->
+                <div class="bg-slate-900 p-6 rounded-lg border border-slate-700">
+                    <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider">FONTE B — A Resposta do Campesinato: A Revolta de Tambov (1920-1921)</span>
+                    <blockquote class="text-sm italic text-slate-300 mt-3 border-l-4 border-amber-500 pl-4 space-y-2">
+                        <p>«Nós, camponeses da província de Tambov, declaramos abertamente perante o país que a ditadura do partido comunista levou a Rússia à ruína total, à fome sistémica e à violência desmedida. Os destacamentos de requisição armados retiram-nos não apenas os excedentes, mas o próprio trigo destinado à sementeira e à alimentação dos nossos filhos.</p>
+                        <p>Exigimos a cessação imediata do monopólio estatal do trigo, o fim dos confiscos forçados, a restauração da liberdade de comércio local e a convocação de assembleias camponesas livres. Não somos contra a revolução, somos contra a tirania dos comissários urbanos.»</p>
+                    </blockquote>
+                    <p class="text-xs text-slate-400 mt-3 border-t border-slate-800 pt-2">
+                        <strong>Referência Académica:</strong> <em>Manifesto da União dos Camponeses Trabalhadores (Província de Tambov)</em>, Dezembro de 1920. Arquivado no <em>GARF</em>, Fundo 8415, Opis 1, Delo 12; citado em Landis, Erik C., <em>Bandits and Partisans: The Antonov Movement</em>, University of Pittsburgh Press, pp. 114–118.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Questões Orientadoras e Bloco de Notas -->
+            <div class="bg-slate-950 p-5 rounded-lg border border-slate-700 mb-6">
+                <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2">💡 Questões para Guia de Análise</h3>
+                <ul class="list-disc pl-5 text-xs text-slate-300 space-y-1 mb-4">
+                    <li>Qual era o objetivo declarado do Estado com o Decreto da <em>Prodrazverstka</em> (Fonte A)?</li>
+                    <li>De acordo com a Fonte B, quais foram as consequências diretas dessas requisições para a vida dos camponeses?</li>
+                </ul>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">📝 Bloco de Notas do Grupo (Economia):</label>
+                <textarea id="notes-econ" onchange="saveLocalStorage()" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-amber-500" placeholder="Registem aqui as vossas notas sobre o impacto do Comunismo de Guerra nos campos..."></textarea>
+            </div>
+
+            <div class="flex justify-between items-center mt-6">
+                <button onclick="changePage(1)" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-4 py-2 rounded-lg text-sm transition cursor-pointer">← Anterior</button>
+                <button onclick="changePage(3)" class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition cursor-pointer">Avançar para Repressão →</button>
+            </div>
+        </div>
+
+        <!-- PÁGINA 3: COMUNISMO DE GUERRA (REPRESSÃO) -->
+        <div id="page-3" class="page bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <div class="flex justify-between items-center mb-4 border-b border-slate-700 pb-3">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Bloco 2 / 4 • Repressão</span>
+                <button onclick="changePage(2)" class="text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded text-slate-300 cursor-pointer">← Voltar à Economia</button>
+            </div>
+            
+            <h2 class="text-2xl font-bold text-white mb-3">Medidas de Repressão: Controlo Político e Social</h2>
+            
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                Paralelamente às medidas económicas, o novo poder soviético ergueu uma estrutura de controlo e repressão para silenciar a oposição política e garantir a manutenção do poder.
+            </p>
+
+            <div class="space-y-6 mb-6">
+                <!-- Fonte C -->
+                <div class="bg-slate-900 p-6 rounded-lg border border-slate-700">
+                    <span class="text-xs text-red-400 font-semibold uppercase tracking-wider">FONTE C — O Decreto sobre a Imprensa (Novembro de 1917)</span>
+                    <blockquote class="text-sm italic text-slate-300 mt-3 border-l-4 border-red-500 pl-4 space-y-2">
+                        <p>«No momento decisivo da revolução, o Conselho de Comissários do Povo não pode permitir que a imprensa burguesa continue a lançar o veneno da dúvida e da calúnia contra o poder popular.</p>
+                        <p>Ficarão sujeitas ao encerramento imediato todas as publicações que: 1) Inciten à resistência aberta ou insubordinação ao Governo dos Sovietes; 2) Semeiem a discórdia através de falsidades deliberadas; 3) Aprovam atos criminosos de oposição à causa socialista.»</p>
+                    </blockquote>
+                    <p class="text-xs text-slate-400 mt-3 border-t border-slate-800 pt-2">
+                        <strong>Referência Académica:</strong> <em>Decreto do Sovnarkom sobre a Imprensa</em>, 9 de Novembro (27 de Outubro) de 1917. Assinado por V. I. Lenin. Publicado em <em>Decrees of the Soviet Power</em>, Vol. I, pp. 24–25.
+                    </p>
+                </div>
+
+                <!-- Fonte D -->
+                <div class="bg-slate-900 p-6 rounded-lg border border-slate-700">
+                    <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider">FONTE D — A Criação da Polícia Política (Cheka)</span>
+                    <blockquote class="text-sm italic text-slate-300 mt-3 border-l-4 border-amber-500 pl-4 space-y-2">
+                        <p>«Camarada Dzerzhinsky: É urgente organizar uma comissão extraordinária para combater a contrarrevolução, a sabotagem e a especulação. As tarefas da comissão serão:</p>
+                        <p>1) Investigar e suprimir todos os atos contrarrevolucionários em todo o território nacional;</p>
+                        <p>2) Entregar todos os sabotadores e especuladores aos tribunais revolucionários;</p>
+                        <p>3) Aplicar medidas de emergência, incluindo a detenção imediata e a apreensão de bens dos inimigos da revolução.»</p>
+                    </blockquote>
+                    <p class="text-xs text-slate-400 mt-3 border-t border-slate-800 pt-2">
+                        <strong>Referência Académica:</strong> <em>Instrução de V. I. Lenin a Felix Dzerzhinsky para a criação da VChK</em>, 20 (7) de Dezembro de 1917. Citado em Leggett, George, <em>The Cheka: Lenin’s Political Police</em>, Oxford University Press, pp. 17–21.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Questões Orientadoras e Bloco de Notas -->
+            <div class="bg-slate-950 p-5 rounded-lg border border-slate-700 mb-6">
+                <h3 class="text-sm font-bold text-amber-400 uppercase tracking-wider mb-2">💡 Questões para Guia de Análise</h3>
+                <ul class="list-disc pl-5 text-xs text-slate-300 space-y-1 mb-4">
+                    <li>Como é que o regime bolshevique justificava ideologicamente a suspensão da liberdade de imprensa?</li>
+                    <li>Qual era a missão atribuída à Cheka e de que forma ela complementava o controlo económico do estado?</li>
+                </ul>
+                <label class="block text-xs font-semibold text-slate-300 mb-1">📝 Bloco de Notas do Grupo (Repressão):</label>
+                <textarea id="notes-repress" onchange="saveLocalStorage()" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-xs text-white focus:outline-none focus:border-amber-500" placeholder="Registem aqui as vossas notas sobre a censura e a atuação da Cheka..."></textarea>
+            </div>
+
+            <div class="flex justify-between items-center mt-6">
+                <button onclick="changePage(2)" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-4 py-2 rounded-lg text-sm transition cursor-pointer">← Anterior (Economia)</button>
+                <button onclick="changePage(4)" class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition cursor-pointer">Avançar para Decisão →</button>
+            </div>
+        </div>
+
+        <!-- PÁGINA 4: O MOMENTO DE DECISÃO DOS ESTUDANTES -->
+        <div id="page-4" class="page bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <div class="flex justify-between items-center mb-4 border-b border-slate-700 pb-3">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Bloco 3 / 4 • Dilema</span>
+                <button onclick="changePage(3)" class="text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded text-slate-300 cursor-pointer">← Voltar à Repressão</button>
+            </div>
+
+            <h2 class="text-2xl font-bold text-white mb-2">O Conselho de Lenine: O Dilema de 1921</h2>
+            
+            <p class="text-slate-300 text-sm mb-4 leading-relaxed">
+                Em março de 1921, a situação atinge o ponto crítico: apesar da vitória dos Bolcheviques na guerra civil, as insurreições camponesas alastram e a fome devasta o país. Como líderes, têm de tomar uma decisão urgente.
+            </p>
+
+            <div class="bg-red-950/40 border border-red-700/50 p-4 rounded-lg mb-4 text-sm text-red-200">
+                <strong>O Dilema Estratégico:</strong> Qual é o rumo necessário para evitar a queda do regime soviético?
+            </div>
+
+            <form id="form-dilema" onsubmit="saveDilemma(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Selecionem a vossa escolha estratégica:</label>
+                    <div class="space-y-2">
+                        <label class="flex items-start gap-3 bg-slate-900 p-3 rounded-lg border border-slate-700 cursor-pointer hover:border-slate-500">
+                            <input type="radio" name="dilema_escolha" value="Aprofundar o Comunismo de Guerra" required class="mt-1">
+                            <span class="text-sm text-slate-300"><strong>Aprofundar o Comunismo de Guerra:</strong> Reforçar o controlo estatal absoluto, intensificar as requisições forçadas e esmagar militarmente todas as revoltas camponesas e operárias.</span>
+                        </label>
+                        <label class="flex items-start gap-3 bg-slate-900 p-3 rounded-lg border border-slate-700 cursor-pointer hover:border-slate-500">
+                            <input type="radio" name="dilema_escolha" value="Conceder abertura económica parcial (NEP)" class="mt-1">
+                            <span class="text-sm text-slate-300"><strong>Recuar estrategicamente e dar liberdade parcial ao mercado:</strong> Substituir as requisições por um imposto fixo e autorizar o comércio livre local para pacificar o campesinato.</span>
+                        </label>
+                        <label class="flex items-start gap-3 bg-slate-900 p-3 rounded-lg border border-slate-700 cursor-pointer hover:border-slate-500">
+                            <input type="radio" name="dilema_escolha" value="Entregar o poder a um governo democrático burguês" class="mt-1">
+                            <span class="text-sm text-slate-300"><strong>Transição democrática:</strong> Dissolver o partido único e convocar eleições multipartidárias imediatas.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Justifiquem a vossa decisão com base nas fontes analisadas (mínimo 50 palavras): *</label>
+                    <textarea id="input-justificacao" required rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-red-500" placeholder="Utilizem os argumentos recolhidos sobre a crise camponesa e o controlo político..."></textarea>
+                </div>
+
+                <div class="flex justify-between items-center pt-2">
+                    <button type="button" onclick="changePage(3)" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-4 py-2 rounded-lg text-sm transition cursor-pointer">← Voltar atrás</button>
+                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition cursor-pointer">Submeter Decisão e Revelar a NEP →</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- PÁGINA 5: A REVELAÇÃO DA NEP COM FONTES REAIS E ESPECÍFICAS -->
+        <div id="page-5" class="page bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <div class="flex justify-between items-center mb-4 border-b border-slate-700 pb-3">
+                <span class="text-xs font-bold text-emerald-400 uppercase tracking-widest">Resolução Histórica • Fontes Reais da NEP (1921)</span>
+                <button onclick="changePage(4)" class="text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded text-slate-300 cursor-pointer">← Voltar ao Dilema</button>
+            </div>
+
+            <h2 class="text-2xl font-bold text-white mb-3">A Nova Política Económica (NEP)</h2>
+            <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+                No X Congresso do Partido Comunista (março de 1921), Lenine impôs um recuo tático para salvar o regime. Analisem as duas fontes primárias reais que formalizaram estas medidas:
+            </p>
+            
+            <div class="space-y-6 mb-6">
+                <!-- Fonte NEP 1 -->
+                <div class="bg-slate-900 p-5 rounded-lg border border-slate-700">
+                    <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider">FONTE 1 — O Imposto em Géneros e a Liberdade Agrícola</span>
+                    <blockquote class="text-sm italic text-slate-300 mt-2 border-l-4 border-amber-500 pl-4 space-y-2">
+                        <p>«1. A requisição de excedentes (...) é substituída por um imposto em géneros sobre os produtos agrícolas. Este imposto deve ser inferior à quantidade recolhida por via da requisição anterior; o seu montante deve ser fixado antes da primavera (...).</p>
+                        <p>2. Todo o excedente que permaneça nas mãos do camponês após o pagamento do imposto fica inteiramente à sua disposição para ser utilizado na sua exploração económica e para troca por produtos no mercado livre local.»</p>
+                    </blockquote>
+                    <p class="text-xs text-slate-400 mt-3 border-t border-slate-800 pt-2">
+                        <strong>Referência:</strong> Decreto do Comité Executivo Central (VTsIK), 21 de março de 1921. In <em>Decrees of the Soviet Power</em>, Vol. XIII, pp. 38–42; <em>Lenin’s Collected Works</em>, Vol. 32, pp. 214–216.
+                    </p>
+                </div>
+
+                <!-- Fonte NEP 2 -->
+                <div class="bg-slate-900 p-5 rounded-lg border border-slate-700">
+                    <span class="text-xs text-amber-400 font-semibold uppercase tracking-wider">FONTE 2 — Abertura Comercial, Pequena Indústria e Concessões Estrangeiras</span>
+                    <blockquote class="text-sm italic text-slate-300 mt-3 border-l-4 border-amber-500 pl-4 space-y-2">
+                        <p>«1. O intercâmbio de produtos agrícolas e industriais é autorizado nos limites das trocas comerciais locais através de mercados privados de retalho.</p>
+                        <p>2. É permitido a cidadãos particulares arrendar ou estabelecer pequenas empresas industriais de produção de bens de consumo [com força de trabalho limitada].</p>
+                        <p>3. Com o objetivo de restabelecer as forças produtivas, decreta-se a concessão temporária de explorações a empresas e técnicos estrangeiros, sob estrita regulamentação estatal.»</p>
+                    </blockquote>
+                    <p class="text-xs text-slate-400 mt-3 border-t border-slate-800 pt-2">
+                        <strong>Referência:</strong> Decretos do Sovnarkom (Maio de 1921 e regulamentos de Concessões). In <em>Sobranie Uzakoneniy RSFSR</em>, 1921, Nº 26; ver Carr, E. H., <em>The Bolshevik Revolution 1917–1923</em>, Vol. 2.
+                    </p>
+                </div>
+            </div>
+
+            <form id="form-nep" onsubmit="submitNepPage(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-1">Com base nestas fontes reais, expliquem por palavras vossas em que consistiu a NEP (o imposto em géneros, o comércio/pequenas empresas e os estrangeiros) e porque representou um recuo económico face ao Comunismo de Guerra: *</label>
+                    <textarea id="input-nep-explain" required rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-red-500" placeholder="Desenvolvam com base nos pontos das fontes 1 e 2..."></textarea>
+                </div>
+
+                <div class="flex justify-between items-center pt-2">
+                    <button type="button" onclick="changePage(4)" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-4 py-2 rounded-lg text-sm transition cursor-pointer">← Voltar atrás</button>
+                    <button type="submit" class="bg-red-600 hover:bg-red-700 text-white font-bold px-6 py-2 rounded-lg transition cursor-pointer">Avançar para o Fecho e Relatório →</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- PÁGINA 6: QUIZ DE CONSOLIDAÇÃO -->
+        <div id="page-6" class="page bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <div class="flex justify-between items-center mb-4 border-b border-slate-700 pb-3">
+                <span class="text-xs font-bold text-amber-400 uppercase tracking-widest">Bloco 4 / 4 • Conclusão</span>
+                <button onclick="changePage(5)" class="text-xs bg-slate-700 hover:bg-slate-600 px-3 py-1 rounded text-slate-300 cursor-pointer">← Voltar à NEP</button>
+            </div>
+
+            <h2 class="text-2xl font-bold text-white mb-4">Consolidação de Aprendizagens</h2>
+
+            <form id="form-quiz" onsubmit="generateReport(event)" class="space-y-6">
+                <!-- Pergunta 1 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="text-sm font-semibold text-slate-200 mb-2">1. Qual foi a principal motivação económica e estratégica da implementação do Comunismo de Guerra (1918–1921) pelos bolcheviques?</p>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="errada" required> Fomentar a transição pacífica para uma economia de mercado socialista baseada na livre concorrência entre cooperativas agrárias privadas.</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="correta"> Centralizar todos os recursos produtivos e alimentares do país para garantir a sobrevivência do Estado soviético e a vitória do Exército Vermelho na Guerra Civil.</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q1" value="errada"> Atrair investimentos diretos de potências capitalistas ocidentais através da privatização imediata da banca e dos transportes ferroviários.</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 2 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="text-sm font-semibold text-slate-200 mb-2">2. De que forma o decreto da requisição forçada de cereais (Prodrazverstka) afetou a relação estrutural entre o poder urbano bolshevique e o campesinato russo?</p>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="errada" required> Gerou um clima de harmonia duradoura, uma vez que os camponeses viram os seus rendimentos aumentarem com os preços fixados pelo Estado.</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="correta"> Provocou uma rutura profunda e revoltas armadas generalizadas (como a insurreição de Tambov), dado que o confisco levava os camponeses à fome.</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q2" value="errada"> Resultou na conversão voluntária de todas as propriedades agrícolas em quintas estatais coletivizadas (sovkhozes) sem qualquer resistência.</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 3 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="text-sm font-semibold text-slate-200 mb-2">3. Qual era a articulação funcional entre o Decreto sobre a Imprensa (1917) e a criação da Comissão Extraordinária (Cheka) durante o período da Guerra Civil?</p>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="errada" required> Serviam exclusivamente para organizar processos judiciais públicos e transparentes contra os ministros do antigo regime czarista deposto.</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="errada"> Eram órgãos descentralizados geridos de forma autónoma pelos grémios sindicais operários e sovietes locais independentes do partido.</label>
+                        <label class="flex items-center gap-2 cursor-pointer"><input type="radio" name="q3" value="correta"> Constituíam os pilares coercivos do Estado para suprimir preventivamente a dissidência política, erradicar a oposição ideológica e eliminar a "sabotagem" económica.</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 4 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="text-sm font-semibold text-slate-200 mb-2">4. No início de 1921, quais foram os fatores fundamentais que tornaram a situação interna insustentável para o governo liderado por Lenine?</p>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q4" value="correta" required class="mt-1"> O colapso económico generalizado, acompanhado por uma fome devastadora que afetou milhões de pessoas e por revoltas armadas de camponeses contra as requisições estatais.</label>
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q4" value="errada" class="mt-1"> A pressão intransigente exercida pela Assembleia Constituinte multipartidária, que exigia a desestatização económica imediata sob ameaça de destituição do governo.</label>
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q4" value="errada" class="mt-1"> O ultimato militar e a invasão conjunta iminente decretada pelas potências aliadas ocidentais para forçar a Rússia a reestabelecer a monarquia absoluta tradicional.</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 5 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="text-sm font-semibold text-slate-200 mb-2">5. Qual foi a alteração estrutural introduzida pelo imposto em géneros (<em>prodnalog</em>) em substituição do Comunismo de Guerra?</p>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q5" value="correta" required class="mt-1"> Substituiu o confisco imprevisível e total por uma quota fixa estipulada antecipadamente, concedendo aos camponeses o direito de comercializarem o excedente livremente.</label>
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q5" value="errada" class="mt-1"> Aboliu definitivamente a circulação de moeda no país, impondo um modelo económico nacional estritamente baseado no escambo direto e na troca de produtos sem preço.</label>
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q5" value="errada" class="mt-1"> Nacionalizou a totalidade da terra arável privada, convertendo de imediato todos os camponeses independentes em assalariados contratados pelas empresas do Estado.</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 6 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="text-sm font-semibold text-slate-200 mb-2">6. Em que medida a abertura económica decretada pela NEP configurou um recuo tático face aos dogmas socialistas anteriores?</p>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q6" value="errada" required class="mt-1"> Consistiu na abolição integral do socialismo e na devolução irrevogável de todos os grandes complexos industriais e do sistema bancário aos antigos proprietários burgueses.</label>
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q6" value="correta" class="mt-1"> Representou um "capitalismo de Estado" limitado, tolerando o comércio privado retalhista e pequenas empresas, enquanto o Estado retinha os setores decisórios estratégicos.</label>
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q6" value="errada" class="mt-1"> Autorizou exclusivamente as transações comerciais externas com países capitalistas, mantendo o mercado interno sob controlo rigoroso de monopólio estatal unificado.</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 7 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="text-sm font-semibold text-slate-200 mb-2">7. Qual era o desígnio estratégico do governo soviético ao instituir o sistema de "Concessões" a empresas e técnicos estrangeiros na NEP?</p>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q7" value="errada" required class="mt-1"> Ceder a soberania político-administrativa de regiões mineiras e industriais a potências imperialistas em troca de apoio militar e garantia de proteção diplomática externa.</label>
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q7" value="errada" class="mt-1"> Renunciar definitivamente ao projeto de industrialização do país para concentrar todos os esforços humanos e financeiros exclusivamente na agricultura de subsistência.</label>
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q7" value="correta" class="mt-1"> Mobilizar capital externo e competências tecnológicas avançadas para reerguer as infraestruturas produtivas em ruínas, mantendo a tutela e regulamentação do Estado.</label>
+                    </div>
+                </div>
+
+                <!-- Pergunta 8 -->
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="text-sm font-semibold text-slate-200 mb-2">8. De que forma a NEP ilustra a ideia de que é necessário ceder no plano económico para salvaguardar a revolução no plano político?</p>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q8" value="correta" required class="mt-1"> Evidencia a flexibilidade tática de adotar mecanismos de mercado e concessões capitalistas de curta duração para aplacar a contestação e preservar o monopólio do poder.</label>
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q8" value="errada" class="mt-1"> Demonstra a renúncia voluntária ao partido único e a integração imediata dos bolcheviques num governo de coligação parlamentar pluralista com partidos de oposição.</label>
+                        <label class="flex items-start gap-2 cursor-pointer"><input type="radio" name="q8" value="errada" class="mt-1"> Comprova a fusão institucional entre o partido comunista e as forças liberais burguesas num único bloco legislativo destinado a redigir uma constituição democrática.</label>
+                    </div>
+                </div>
+
+                <div class="flex justify-between items-center pt-2">
+                    <button type="button" onclick="changePage(5)" class="bg-slate-700 hover:bg-slate-600 text-slate-200 px-4 py-2 rounded-lg text-sm transition cursor-pointer">← Voltar atrás</button>
+                    <button type="submit" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-6 py-2 rounded-lg transition shadow-lg cursor-pointer">Gerar Relatório Final 📊</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- PÁGINA 7: RELATÓRIO FINAL IMPRIMÍVEL -->
+        <div id="page-7" class="page bg-slate-800 border border-slate-700 rounded-xl p-8 shadow-xl">
+            <div class="text-center pb-6 border-b border-slate-700 mb-6">
+                <span class="bg-emerald-900 text-emerald-200 text-xs px-3 py-1 rounded-full uppercase font-bold">Simulação Concluída</span>
+                <h2 class="text-3xl font-extrabold text-white mt-2">Relatório de Desempenho Histórico</h2>
+                <p class="text-slate-400 text-sm mt-1">Registo oficial de análise do grupo</p>
+            </div>
+
+            <div class="space-y-4 text-sm text-slate-300 mb-6">
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700 space-y-1">
+                    <p><strong>Membros do Grupo:</strong> <span id="rep-name" class="text-white"></span></p>
+                    <p><strong>Pontuação no Quiz:</strong> <span id="rep-score" class="font-bold text-emerald-400"></span> / 8</p>
+                </div>
+
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="font-semibold text-white mb-1">Notas de Análise (Economia):</p>
+                    <p id="rep-notes-econ" class="text-slate-300 italic"></p>
+                </div>
+
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="font-semibold text-white mb-1">Notas de Análise (Repressão):</p>
+                    <p id="rep-notes-repress" class="text-slate-300 italic"></p>
+                </div>
+
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="font-semibold text-white mb-1">Decisão no Conselho de Lenine:</p>
+                    <p id="rep-escolha" class="text-amber-300 italic"></p>
+                    <p id="rep-justificacao" class="text-slate-300 italic mt-2 border-t border-slate-800 pt-2"></p>
+                </div>
+
+                <div class="bg-slate-900 p-4 rounded-lg border border-slate-700">
+                    <p class="font-semibold text-white mb-1">Explicação da NEP (com base nas Fontes 1 e 2):</p>
+                    <p id="rep-nep" class="text-slate-300 italic"></p>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 justify-between">
+                <button onclick="downloadJSON()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-4 py-2 rounded-lg text-sm transition cursor-pointer">
+                    📥 Descarregar Respostas (.json)
+                </button>
+                <button onclick="window.print()" class="bg-slate-700 hover:bg-slate-600 text-white font-bold px-4 py-2 rounded-lg text-sm transition cursor-pointer">
+                    🖨️ Imprimir / Guardar PDF
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-slate-800 border-t border-slate-700 p-4 text-center text-xs text-slate-500">
+        Simulação Pedagógica • História Contemporânea (Comunismo de Guerra e NEP)
+    </footer>
+
+    <!-- SCRIPT DE GESTÃO DE ESTADO E NAVEGAÇÃO -->
+    <script>
+        let studentData = {
+            name: "",
+            notesEcon: "",
+            notesRepress: "",
+            dilemaEscolha: "",
+            dilemaJustificacao: "",
+            nepTexto: "",
+            quizScore: 0
+        };
+
+        window.onload = function() {
+            const saved = localStorage.getItem('russia_sim_data');
+            if (saved) {
+                try {
+                    const parsed = JSON.parse(saved);
+                    if (parsed.name) document.getElementById('input-name').value = parsed.name;
+                    if (parsed.notesEcon) document.getElementById('notes-econ').value = parsed.notesEcon;
+                    if (parsed.notesRepress) document.getElementById('notes-repress').value = parsed.notesRepress;
+                } catch(e) {}
+            }
+        };
+
+        function changePage(pageNum) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.getElementById(`page-${pageNum}`).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function startSimulation(e) {
+            e.preventDefault();
+            studentData.name = document.getElementById('input-name').value;
+            document.getElementById('display-name').innerText = studentData.name;
+            document.getElementById('user-info-display').classList.remove('hidden');
+            saveLocalStorage();
+            changePage(2);
+        }
+
+        function saveDilemma(e) {
+            e.preventDefault();
+            const radios = document.getElementsByName('dilema_escolha');
+            for (let r of radios) {
+                if (r.checked) studentData.dilemaEscolha = r.value;
+            }
+            studentData.dilemaJustificacao = document.getElementById('input-justificacao').value;
+            saveLocalStorage();
+            changePage(5);
+        }
+
+        function submitNepPage(e) {
+            e.preventDefault();
+            studentData.nepTexto = document.getElementById('input-nep-explain').value;
+            saveLocalStorage();
+            changePage(6);
+        }
+
+        function generateReport(e) {
+            e.preventDefault();
+            let score = 0;
+            // CORREÇÃO: agora são contabilizadas as 8 perguntas
+            for (let i = 1; i <= 8; i++) {
+                const q = document.querySelector(`input[name="q${i}"]:checked`);
+                if (q && q.value === 'correta') score++;
+            }
+
+            studentData.quizScore = score;
+            studentData.notesEcon = document.getElementById('notes-econ').value;
+            studentData.notesRepress = document.getElementById('notes-repress').value;
+            saveLocalStorage();
+
+            document.getElementById('rep-name').innerText = studentData.name;
+            document.getElementById('rep-score').innerText = studentData.quizScore;
+            document.getElementById('rep-notes-econ').innerText = studentData.notesEcon ? `"${studentData.notesEcon}"` : "Sem notas registadas.";
+            document.getElementById('rep-notes-repress').innerText = studentData.notesRepress ? `"${studentData.notesRepress}"` : "Sem notas registadas.";
+            document.getElementById('rep-escolha').innerText = studentData.dilemaEscolha;
+            document.getElementById('rep-justificacao').innerText = `Justificação: "${studentData.dilemaJustificacao}"`;
+            document.getElementById('rep-nep').innerText = `"${studentData.nepTexto}"`;
+
+            changePage(7);
+        }
+
+        function saveLocalStorage() {
+            const econ = document.getElementById('notes-econ');
+            const repress = document.getElementById('notes-repress');
+            if (econ) studentData.notesEcon = econ.value;
+            if (repress) studentData.notesRepress = repress.value;
+            localStorage.setItem('russia_sim_data', JSON.stringify(studentData));
+        }
+
+        function downloadJSON() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(studentData, null, 2));
+            const downloadAnchor = document.createElement('a');
+            downloadAnchor.setAttribute("href", dataStr);
+            downloadAnchor.setAttribute("download", `Relatorio_Grupo_${studentData.name.replace(/\s+/g, '_')}.json`);
+            document.body.appendChild(downloadAnchor);
+            downloadAnchor.click();
+            downloadAnchor.remove();
+        }
+    </script>
+</body>
+</html>
